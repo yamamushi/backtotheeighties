@@ -1,0 +1,51 @@
+=cyan
+Length: 4
+Complementary Color: orange
+Triad 1: yellow
+Triad 2: red
+
+=purple
+Length: 6
+Compl: lime
+Triad1:
+Triad2:
+
+=yellow
+
+Length:
+Compl:
+Triad1:
+Triad2:
+
+=red
+
+Length:
+Compl: (green?)
+Triad1: cyan
+Triad2:
+
+=green
+Length:
+Compl: red
+Triad1:
+Triad2:
+
+=orange
+
+Length:
+Compl:
+Triad1:
+Triad2:
+
+=blue
+Length: 4
+Complementary: yellow
+triad1: lime
+triad2: orange
+
+=lime
+
+Length:
+Compl: (purple?)
+Triad1:
+Triad2:
