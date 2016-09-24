@@ -14,7 +14,7 @@ function(context, args)
 		for (var i = 0; i < u.length; i++) {
 			t.c001 = u[i];
 			t.color_digit = t.c001.length;
-			if (! /LOCK_ERROR.*correct color name\./.test(args.npc.call(t).replace("\n", ""))) {
+			if (! /LOCK_ERROR.*correct color name\./.test(args.n.call(t).replace("\n", ""))) {
 				break;
 			}
 		}		

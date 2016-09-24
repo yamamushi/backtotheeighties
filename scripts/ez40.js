@@ -1,40 +1,27 @@
 function(context, args)
 {
-	var lock_args = {};
-	var lock_type;
-	var ret;
-	var t;
-	//
-	// Possible lock open strings
-	//
-	var unlock = ["unlock", "open", "release"]
-	breakEz40();
-	tell(JSON.stringify(lock_args));
+	var t = {ez_40:"", ez_prime:""};
+	var w = ["unlock", "open", "release"];
+	var p = [ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 ];
+	f();
+	g();
+	#s.chats.tell({ to:context.caller, msg: JSON.stringify(t) });
 	return { ok:true };
-	function breakEz40() {
-		t = { ez_40:"" };
-		lock_args.ez_40 = getUnlockString("ez_40");
-	}
-	//
-	// Find the correct unlock string
-	//
-	function getUnlockString(key) {
-		//
-		// Loop through possible unlock strings in an attempt to break the lock
-		//
-		for (var i = 0; i < unlock.length; i++) {
-			t[key] = unlock[i];
-			if (! /LOCK_ERROR.*correct unlock/.test(args.npc.call(t).replace("\n", ""))) {
-				return unlock[i];
+	function f() {
+		for (var i = 0; i < w.length; i++) {
+			t.ez_40 = w[i];
+			if (! /.*ERROR.*unlock/.test(args.n.call(t).replace("\n", ""))) {
+				return;
 			}
 		}		
 	}
-
-	//
-	// Send a tell to the user with a message
-	//
-	function tell(s) {
-		#s.chats.tell({ to:context.caller, msg: s });
+	function g() {
+		for (var i = 0; i < p.length; i++) {
+			t.ez_prime = p[i];
+			if (! /.*ERROR.*prime/.test(args.n.call(t).replace("\n", ""))) {
+				return;
+			}
+		}	
 	}
 
 }
