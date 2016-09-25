@@ -15,7 +15,7 @@ function(context, args)
 	function getUnString(key) {
 		for (var i = 0; i < unlock.length; i++) {
 			t[key] = unlock[i];
-			if (! /LOCK_ERROR.*correct color name\./.test(args.n.call(t).replace("\n", ""))) {
+			if (! /LOCK_ERROR.*correct color name/.test(args.n.call(t).replace("\n", ""))) {
 				return unlock[i];
 			}
 		}		

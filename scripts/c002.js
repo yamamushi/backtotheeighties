@@ -1,7 +1,8 @@
 function(context, args)
 {
 	var u = ["cyan", "purple", "yellow", "red", "green", "orange", "blue", "lime"];
-	var	t = { c002: "", c002_complement:"" };
+	var	t = { c002:"", c002_complement:"" };
+	Object.assign(t, args.t);
 	for (var i = 0; i < u.length; i++) {
 		t.c002 = u[i];
 		if (! /.*ERROR.*color name/.test(args.n.call(t).replace("\n", ""))) {

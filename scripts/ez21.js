@@ -1,29 +1,17 @@
 function(context, args)
 {
-	var lock_args = {};
-	var t;
+	var t = { ez_21:"" };
 	Object.assign(t, args.t);
+	var u = ["unlock", "open", "release"];
 
-	var unlock = ["unlock", "open", "release"]
-	breakEz21();
-	tell(JSON.stringify(lock_args));
+	for (var i = 0; i < u.length; i++) {
+		t.ez_21 = u[i];
+		if (! /LOCK_ERROR.*correct unlock/.test(args.n.call(t).replace("\n", ""))) {
+			return u[i];
+		}	
+	}
+
+	#s.chats.tell({ to:context.caller, msg: JSON.stringify(t) });
 	return { ok:true };
-	function breakEz21() {
-		t = { ez_21:"" };
-		lock_args.ez_21 = getUnlockString("ez_21");
-	}
-
-	function getUnlockString(key) {
-		for (var i = 0; i < unlock.length; i++) {
-			t[key] = unlock[i];
-			if (! /LOCK_ERROR.*correct unlock/.test(args.n.call(t).replace("\n", ""))) {
-				return unlock[i];
-			}
-		}		
-	}
-
-	function tell(s) {
-		#s.chats.tell({ to:context.caller, msg: s });
-	}
 
 }
