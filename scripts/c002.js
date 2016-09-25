@@ -1,17 +1,19 @@
 function(context, args)
 {
-	var t;
 	var u = ["cyan", "purple", "yellow", "red", "green", "orange", "blue", "lime"];
-	c002();
-	#s.chats.tell({ to:context.caller, msg: JSON.stringify(t)});
+	var	t = { c002: "", c002_complement:"" };
+	for (var i = 0; i < u.length; i++) {
+		t.c002 = u[i];
+		if (! /.*ERROR.*color name/.test(args.n.call(t).replace("\n", ""))) {
+			break;
+		}
+	}	
+	for (var i = 0; i < u.length; i++) {
+		t.c002_complement = u[i];
+		if (! /.*ERROR.*complement color/.test(args.n.call(t).replace("\n", ""))) {
+			break;
+		}
+	}		
+		#s.chats.tell({ to:context.caller, msg: JSON.stringify(t)});
 	return { ok:true };
-	function c002() {
-		t = { c002: args.c, c002_complement:"" };
-		for (var i = 0; i < u.length; i++) {
-			t.c002_complement = u[i];
-			if (! /LOCK_ERROR.*correct complement color\./.test(args.n.call(t).replace("\n", ""))) {
-				break;
-			}
-		}		
-	}
 }

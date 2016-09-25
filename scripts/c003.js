@@ -1,28 +1,19 @@
 function(context, args)
 {
-	var largs = {};
-	var t;
-
-	var unlock = ["cyan", "purple", "yellow", "red", "green", "orange", "blue", "lime"]
-	bkc003();
-	tell(JSON.stringify(largs));
+	var u = ["cyan", "purple", "yellow", "red", "green", "orange", "blue", "lime"];
+	var	t = { c003: args.c, c003_triad_1:"", c003_triad_2:"" };
+	for (var i = 0; i < u.length; i++) {
+		t.c003_triad_1 = u[i];
+		if (! /.*ERROR.*first triad color/.test(args.n.call(t).replace("\n", ""))) {
+			break;
+		}
+	}	
+	for (var i = 0; i < u.length; i++) {
+		t.c003_triad_2 = u[i];
+		if (! /.*ERROR.*second triad color/.test(args.n.call(t).replace("\n", ""))) {
+			break;
+		}
+	}		
+		#s.chats.tell({ to:context.caller, msg: JSON.stringify(t)});
 	return { ok:true };
-	function bkc003() {
-		t = { c003:"" };
-		largs.c003 = getUnString("c003");
-	}
-
-	function getUnString(key) {
-		for (var i = 0; i < unlock.length; i++) {
-			t[key] = unlock[i];
-			if (! /LOCK_ERROR.*correct color name\./.test(args.n.call(t).replace("\n", ""))) {
-				return unlock[i];
-			}
-		}		
-	}
-
-	function tell(s) {
-		#s.chats.tell({ to:context.caller, msg: s });
-	}
-
 }
