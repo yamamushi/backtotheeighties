@@ -9,8 +9,8 @@ function(context, args)
 			t.a = u[3];
 			break;
 		case(c == u[1]):
-			t.t = u[2];
-			t.a = u[3];
+			t.t = u[4];
+			t.a = u[2];
 			break;	
 		case(c == u[2]):
 			t.t = u[2];
@@ -21,8 +21,8 @@ function(context, args)
 			t.a = u[3];
 			break;
 		case(c == u[4]):
-			t.t = u[2];
-			t.a = u[3];
+			t.t = u[5];
+			t.a = u[1];
 			break;	
 		case(c == u[5]):
 			t.t = u[2];

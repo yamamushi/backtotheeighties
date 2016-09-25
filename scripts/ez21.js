@@ -2,7 +2,8 @@ function(context, args)
 {
 	var lock_args = {};
 	var t;
-	
+	Object.assign(t, args.t);
+
 	var unlock = ["unlock", "open", "release"]
 	breakEz21();
 	tell(JSON.stringify(lock_args));

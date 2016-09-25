@@ -1,6 +1,7 @@
 function(context, args)
 {
 	var t = {ez_35:"", digit:""};
+	Object.assign(t, args.t);
 	var u = ["unlock", "open", "release"];
 	for (var i = 0; i < u.length; i++) {
 		t.ez_35 = u[i];
