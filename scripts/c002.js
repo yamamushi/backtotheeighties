@@ -5,13 +5,13 @@ function(context, args)
 	Object.assign(t, args.t);
 	for (var i = 0; i < u.length; i++) {
 		t.c002 = u[i];
-		if (! /.*ERROR.*color name/.test(args.n.call(t).replace("\n", ""))) {
+		if (! /.*ERROR.*color name.*/.test(args.n.call(t).replace("\n", ""))) {
 			break;
 		}
 	}	
 	for (var i = 0; i < u.length; i++) {
 		t.c002_complement = u[i];
-		if (! /.*ERROR.*complement color/.test(args.n.call(t).replace("\n", ""))) {
+		if (! /.*ERROR.*complement color.*/.test(args.n.call(t).replace("\n", ""))) {
 			break;
 		}
 	}		

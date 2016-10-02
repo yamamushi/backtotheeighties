@@ -7,35 +7,35 @@ Triad 2: red
 =purple
 Length: 6
 Compl: lime
-Triad1:
-Triad2:
+Triad1: green
+Triad2: yellow
 
 =yellow
 
-Length:
-Compl:
-Triad1:
-Triad2:
+Length: 6
+Compl: 
+Triad1: purple
+Triad2: cyan
 
 =red
 
-Length:
-Compl: (green?)
+Length: 6
+Compl: green
 Triad1: cyan
-Triad2:
+Triad2: lime
 
 =green
-Length:
+Length: 5
 Compl: red
-Triad1:
-Triad2:
+Triad1: orange
+Triad2: purple
 
 =orange
 
-Length:
-Compl:
-Triad1:
-Triad2:
+Length: 6
+Compl: 
+Triad1: blue
+Triad2: green
 
 =blue
 Length: 4
@@ -44,8 +44,7 @@ triad1: lime
 triad2: orange
 
 =lime
-
-Length:
-Compl: (purple?)
-Triad1:
-Triad2:
+Length: 4
+Compl: purple
+Triad1: red
+Triad2: blue
